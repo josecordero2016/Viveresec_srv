@@ -45,6 +45,10 @@ import javax.xml.bind.annotation.XmlTransient;
     , @NamedQuery(name = "Compras.findByDireccion", query = "SELECT c FROM Compras c WHERE c.direccion = :direccion")})
 public class Compras implements Serializable {
 
+    @JoinColumn(name = "id_vendedor", referencedColumnName = "id_usuario")
+    @ManyToOne(optional = false)
+    private Usuarios idVendedor;
+
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -166,6 +170,14 @@ public class Compras implements Serializable {
     @Override
     public String toString() {
         return "Rest.Compras[ idCompra=" + idCompra + " ]";
+    }
+
+    public Usuarios getIdVendedor() {
+        return idVendedor;
+    }
+
+    public void setIdVendedor(Usuarios idVendedor) {
+        this.idVendedor = idVendedor;
     }
     
 }

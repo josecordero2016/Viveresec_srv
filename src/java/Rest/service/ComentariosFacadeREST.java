@@ -22,7 +22,7 @@ import javax.ws.rs.core.MediaType;
 
 /**
  *
- * @author PC
+ * @author im_jo
  */
 @Stateless
 @Path("rest.comentarios")
@@ -37,14 +37,14 @@ public class ComentariosFacadeREST extends AbstractFacade<Comentarios> {
 
     @POST
     @Override
-    @Consumes({ MediaType.APPLICATION_JSON})
+    @Consumes({MediaType.APPLICATION_JSON})
     public void create(Comentarios entity) {
         super.create(entity);
     }
 
     @PUT
     @Path("{id}")
-    @Consumes({ MediaType.APPLICATION_JSON})
+    @Consumes({MediaType.APPLICATION_JSON})
     public void edit(@PathParam("id") Integer id, Comentarios entity) {
         super.edit(entity);
     }
@@ -57,21 +57,21 @@ public class ComentariosFacadeREST extends AbstractFacade<Comentarios> {
 
     @GET
     @Path("{id}")
-    @Produces({ MediaType.APPLICATION_JSON})
+    @Produces({MediaType.APPLICATION_JSON})
     public Comentarios find(@PathParam("id") Integer id) {
         return super.find(id);
     }
 
     @GET
     @Override
-    @Produces({ MediaType.APPLICATION_JSON})
+    @Produces({MediaType.APPLICATION_JSON})
     public List<Comentarios> findAll() {
         return super.findAll();
     }
 
     @GET
     @Path("{from}/{to}")
-    @Produces({ MediaType.APPLICATION_JSON})
+    @Produces({MediaType.APPLICATION_JSON})
     public List<Comentarios> findRange(@PathParam("from") Integer from, @PathParam("to") Integer to) {
         return super.findRange(new int[]{from, to});
     }

@@ -49,6 +49,10 @@ import javax.xml.bind.annotation.XmlTransient;
     , @NamedQuery(name = "Productos.findByFechaRegistro", query = "SELECT p FROM Productos p WHERE p.fechaRegistro = :fechaRegistro")})
 public class Productos implements Serializable {
 
+    @Size(max = 100)
+    @Column(name = "imagen")
+    private String imagen;
+
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -256,6 +260,14 @@ public class Productos implements Serializable {
     @Override
     public String toString() {
         return "Rest.Productos[ idProducto=" + idProducto + " ]";
+    }
+
+    public String getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
     }
     
 }
