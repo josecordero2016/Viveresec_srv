@@ -36,7 +36,8 @@ import javax.xml.bind.annotation.XmlRootElement;
     , @NamedQuery(name = "ConsultarProductosxcateg.findByUnidadMedida", query = "SELECT c FROM ConsultarProductosxcateg c WHERE c.unidadMedida = :unidadMedida")
     , @NamedQuery(name = "ConsultarProductosxcateg.findByFechaRegistro", query = "SELECT c FROM ConsultarProductosxcateg c WHERE c.fechaRegistro = :fechaRegistro")
     , @NamedQuery(name = "ConsultarProductosxcateg.findByImagen", query = "SELECT c FROM ConsultarProductosxcateg c WHERE c.imagen = :imagen")
-    , @NamedQuery(name = "ConsultarProductosxcateg.findByCategoria", query = "SELECT c FROM ConsultarProductosxcateg c WHERE c.categoria = :categoria")})
+    , @NamedQuery(name = "ConsultarProductosxcateg.findByCategoria", query = "SELECT c FROM ConsultarProductosxcateg c WHERE c.categoria = :categoria")
+    , @NamedQuery(name = "ConsultarProductosxcateg.findByIdUsuario", query = "SELECT c FROM ConsultarProductosxcateg c WHERE c.idUsuario = :idUsuario")})
 public class ConsultarProductosxcateg implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -66,7 +67,19 @@ public class ConsultarProductosxcateg implements Serializable {
     @Size(max = 20)
     @Column(name = "categoria")
     private String categoria;
+    @Column(name = "id_usuario")
+    private String idUsuario;
+  
 
+    public String getIdUsuario() {
+        return idUsuario;
+    }
+
+    public void setIdUsuario(String idUsuario) {
+        this.idUsuario = idUsuario;
+    }
+
+    
     public ConsultarProductosxcateg() {
     }
 

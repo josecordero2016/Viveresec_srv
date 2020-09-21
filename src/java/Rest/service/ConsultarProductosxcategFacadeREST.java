@@ -45,20 +45,20 @@ public class ConsultarProductosxcategFacadeREST extends AbstractFacade<Consultar
     @PUT
     @Path("{id}")
     @Consumes({ MediaType.APPLICATION_JSON})
-    public void edit(@PathParam("id") String id, ConsultarProductosxcateg entity) {
+    public void edit(@PathParam("id") Integer id, ConsultarProductosxcateg entity) {
         super.edit(entity);
     }
 
     @DELETE
     @Path("{id}")
-    public void remove(@PathParam("id") String id) {
+    public void remove(@PathParam("id") Integer id) {
         super.remove(super.find(id));
     }
 
     @GET
     @Path("{id}")
     @Produces({ MediaType.APPLICATION_JSON})
-    public ConsultarProductosxcateg find(@PathParam("id") String id) {
+    public ConsultarProductosxcateg find(@PathParam("id") Integer id) {
         return super.find(id);
     }
 
