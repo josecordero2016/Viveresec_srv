@@ -32,6 +32,7 @@ public class ApplicationConfig extends Application {
         resources.add(Rest.service.CategoriasFacadeREST.class);
         resources.add(Rest.service.ComentariosFacadeREST.class);
         resources.add(Rest.service.ComprasFacadeREST.class);
+        resources.add(Rest.service.ConsultarProductosxcategFacadeREST.class);
         resources.add(Rest.service.DetalleComprasFacadeREST.class);
         resources.add(Rest.service.ImagenesFacadeREST.class);
         resources.add(Rest.service.ProductosFacadeREST.class);
