@@ -36,6 +36,7 @@ public class ApplicationConfig extends Application {
         resources.add(Rest.service.ImagenesFacadeREST.class);
         resources.add(Rest.service.ProductosFacadeREST.class);
         resources.add(Rest.service.UsuariosFacadeREST.class);
+        resources.add(Rest.service.VwdestacadosFacadeREST.class);
     }
     
 }
